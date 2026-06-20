@@ -4,6 +4,8 @@ class solution:
         while(n>0):
             lastdig = n%10
             revnum = revnum * 10 + lastdig
-            n = n/10
+            n = n//10
         return revnum
-if __main__= 
+sol = solution()
+n = 987
+print(sol.revnum(n))
