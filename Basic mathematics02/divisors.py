@@ -1,12 +1,49 @@
-class solution:
-    def getDivisors(self,n):
-        res = []
-        for i in range(1,n+1):
-            if(n%i)==0:
-                res.append(i)
-        return res
-sol = solution()
-n=36
-result = sol.getDivisors(n)
+# def divisors(n):
+#     for i in range(1,n+1):
+#         if(n % i == 0):
+#             print(f"The divisors are {i}")
+        
+# n = int(input("Enter n: "))
+# divisors(n)
 
-print("Divisors of", n, ":", *result)
+# TC = O(n) [because loops run from 1 to n]
+
+
+# 2nd approach better
+
+import math
+
+class Solution:
+    # Function to get all divisors
+    def getDivisors(self, N):
+        # Create list to store divisors
+        res = []
+
+        # Loop from 1 to square root of N
+        for i in range(1, int(math.isqrt(N)) + 1): #1,2,3,4,6,9,12,18,36
+            # Check if i divides N
+            if N % i == 0: #1,36,2,18,3,12,4,9,6
+                # Add i to result
+                res.append(i)
+
+                # If N // i is not the same, add that too
+                if i != N // i:
+                    res.append(N // i)
+
+        res.sort()
+        # Return the list of divisors
+        return res
+
+# Create object of Solution class
+sol = Solution()
+
+# Input number
+N = 36
+
+# Get divisors
+result = sol.getDivisors(N)
+
+# Print the result
+print("Divisors of", N, ":", *result)  # (*) ye na lgate toh list deta isko unpacking operator kehte
+
+# TC = O(√N) which is faster than O(n)

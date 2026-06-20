@@ -1,27 +1,29 @@
+# def countDigits(n):
+#     cnt = 0
+#     while(n > 0):
+#         cnt = cnt + 1
+#         n = n // 10
 
-# Function to count the number
-# of digits in an integer 'n'.
-def countDigits(n):
-    # Initialize a counter variable
-    # 'cnt' to store the count of digits.
-    cnt = 0 
-    # While loop iterates until 'n'
-    # becomes 0 (no more digits left).
-    while n > 0:
-        # Increment the counter
-        # for each digit encountered.
-        cnt = cnt + 1
-        # Divide 'n' by 10 to
-        # remove the last digit.
-        n = n // 10
-    # Return the
-    # count of digits.
-    return cnt
+#     return cnt
+
+# if __name__ == "__main__":
+#     N = 329823
+#     print("N:", N)
+#     digits = countDigits(N)
+#     print("Number of Digits in N:", digits)
+
+# For above TC will be: O(log10 (n)) --> because we are dividing n by 10 so base will be 10
+
+# If we divide n by 2 TC will be: O(log2 (n)) --> we take log base with which we divide the n
 
 
-if __name__ == "__main__":
-    N = 329823
-    print("N:", N)
-    digits = countDigits(N)
-    print("Number of Digits in N:", digits)
-                                
+# 2nd approach
+
+import math
+
+n = int(input("Enter n: "))
+
+digit = int(math.log10(n) + 1)
+print(f"No of digits: {digit}")
+
+# For this TC will be: O(1) --> because all opearations executing once and there is no loop
