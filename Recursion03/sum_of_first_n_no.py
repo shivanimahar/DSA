@@ -1,3 +1,5 @@
+# Parametrised function
+
 # class solution:
 #     def sumOfNaturalNumbers(self,i,sum):  # the answer (sum) is carried in the function parameter itself.
 #         if(i < 1):
